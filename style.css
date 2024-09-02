@@ -10,8 +10,10 @@ html{
 }
 body{
       background-color: whitesmoke;
+      overflow-x: hidden;
 }
 .mainPage{
+      position: relative;
       width: 100vw;
       min-height: 100vh;
       /* display: none; */
@@ -67,6 +69,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
 }
 
 .leftBtn{
@@ -119,6 +122,10 @@ body{
       margin-top: 2px;
       font-size: 0.8rem;
 }
+.seen{
+      background-image: none;
+      background-color: grey;
+}
 
 
 
@@ -159,4 +166,115 @@ body{
       text-decoration: none;
       font-weight: 600;
       color: skyblue;
+}
+
+
+/* View page styling */
+.viewPage{
+      position: absolute;
+      top:0;
+      left:0;
+      /* z-index: 999; */
+      background-color: rgba(0, 0, 0, 0.95);
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      /* display: flex; */
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+}
+.show{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 20px;
+      overflow: hidden;
+}
+.view1{
+      height: 40%;
+      width: 10%;
+}
+.view2{
+      height: 55%;
+      width: 15%;
+}
+.view3{
+      height: 90%;
+      width: 22%;
+}
+.view4{
+      height: 55%;
+      width: 15%;
+}
+.view5{
+      height: 40%;
+      width: 10%;
+}
+
+.content video{
+      width: 100%;
+      height: 100%;
+      /* border: 1px solid white;
+      border-radius: 20px; */
+}
+.closeBtn{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      height: 1rem;
+      width: 1rem;
+      top:3rem;
+      right:3rem;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+}
+.Btn{
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      cursor: pointer;
+}
+.videoControls{
+      width: 22%;
+      /* background-color: #405de6; */
+      padding: .3rem;
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      top:8%;
+      z-index: 9;
+}
+.replySection{
+      position: absolute;
+      /* padding: .3rem; */
+      width: 18%;
+      height: 7%;
+      border: 1px solid white;
+      border-radius: 9999px;
+      bottom: 10%;
+}
+.replySection input{
+      height: 100%;
+      width: 100%;
+      padding: .3rem;
+      border-radius: 9999px;
+      border: 0 !important;
+      outline: 0 !important;
+      background-color: transparent;
+      color: black;
+}
+.replySection input:focus{
+      background-color: white;
 }
