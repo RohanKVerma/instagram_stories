@@ -1,0 +1,108 @@
+
+/* Global styles */
+*{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+}
+.mainPage{
+      width: 100vw;
+      min-height: 100vh;
+}
+
+/* Styling for left hand side panel */
+.leftPanel{
+      position: fixed;
+      width: 20%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem;
+      /* background-color: transparent; */
+}
+.instaLogo{
+      align-self: flex-start;
+      width: 100%;
+      height: auto;
+}
+.instaLogo img{
+      width: 100%;
+      height: 100%;
+}
+
+
+/* Main content in center panel */
+.contentPage{
+      background-color: aqua;
+      width: 50%;
+      min-height: 100vh;
+      margin-right: 30%;
+      margin-left: 20%;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: hidden;
+}
+.stories{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: start;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      background-color: aliceblue;
+}
+.story{
+      display: flex;
+      width: 10vh;
+      height: 10vh;
+      overflow: hidden;
+      gap: 10px;
+}
+
+
+
+
+/* Styling for right hand side panel */
+.rightPanel{
+      position: fixed;
+      width: 30%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem;
+      /* background-color: red; */
+}
+.myDetails{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+}
+.myPFP{
+      width: 15%;
+      height: 15%;
+      border-radius: 50%;
+      overflow: hidden;
+}
+.myPFP img{
+      width: 100%;
+      height: 100%;
+}
+.myID{
+      font-weight: 600;
+}
+.switchProfileBtn a{
+      text-decoration: none;
+      font-weight: 600;
+      color: skyblue;
+}
