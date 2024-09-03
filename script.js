@@ -97,18 +97,18 @@ function showVideo(userId){
             video2.src = videoArray[userId-2].url;
       }
 
-      if(userId-1<0){
+      if(userId-1<0 || userId>videoArray.length){
             const viewPage = document.querySelector('.viewPage');
             viewPage.style.display = 'none';
-            const video = document.querySelector('.view3 video')
-            video.pause();
+            video3.style.display = 'none';
+            video3.pause();
       }else{
             video3.src = videoArray[userId-1].url;
             video3.play();
       }
 
       if(userId>videoArray.length){
-            video4.style.display = 'none';
+            video4.parentNode.parentNode.style.display = 'none';
       }else{
             video4.src = videoArray[userId].url;
       }
