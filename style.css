@@ -1,9 +1,7 @@
 
 /* Global styles */
-html{
-      scroll-behavior: smooth;
-}
 *{
+      scroll-behavior: smooth;
       margin:0;
       padding:0;
       box-sizing: border-box;
@@ -86,6 +84,7 @@ body{
       justify-content: start;
       align-items: center;
       overflow-x: auto;
+      scroll-behavior: smooth;
       /* overflow: hidden; */
 }
 .storyContainer::-webkit-scrollbar{
