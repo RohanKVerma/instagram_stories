@@ -1,58 +1,58 @@
 const videoArray = [
      {
             "title": "Video 1",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       },
       {
             "title": "Video 2",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
       },
       {
             "title": "Video 3",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
       },
       {
             "title": "Video 4",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
       },
       {
             "title": "Video 5",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
       },
       {
             "title": "Video 6",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
       },
       {
             "title": "Video 7",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
       },
       {
             "title": "Video 8",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
       },
       {
             "title": "Video 9",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
       },
       {
             "title": "Video 10",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
       },
       {
             "title": "Video 11",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
       },
       {
             "title": "Video 12",
-            "url": "Assets/3997798-uhd_2160_4096_25fps.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
       },
       {
             "title": "Video 13",
-            "url": "Assets/fiverrcom-video-editing-gig-sample-2022.mp4"
+            "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       }
 ]
-
+// console.log(videoArray.length)
 var userId;
 
 const storyContainer = document.querySelector('.storyContainer');
@@ -74,29 +74,47 @@ function showVideo(userId){
       const video4 = document.querySelector('.view4 video')
       const video5 = document.querySelector('.view5 video')
       
+      const stories = document.querySelectorAll(`.story`);
+      stories.forEach(element => {
+            if(element.id == userId){
+                  // console.log(element.children[0])
+                  element.children[0].classList.add('seen');
+                  console.log(element);
+            }else{
+
+            }
+      });
       if(userId-3<0){
-            video1.src = '';
+            video1.style.display = 'none';
       }else{
+            console.log(videoArray[userId-3].url)
             video1.src = videoArray[userId-3].url;
       }
 
       if(userId-2<0){
-            video2.src = '';
+            video2.style.display = 'none';
       }else{
             video2.src = videoArray[userId-2].url;
       }
 
-      video3.src = videoArray[userId-1].url;
-      video3.play();
+      if(userId-1<0){
+            const viewPage = document.querySelector('.viewPage');
+            viewPage.style.display = 'none';
+            const video = document.querySelector('.view3 video')
+            video.pause();
+      }else{
+            video3.src = videoArray[userId-1].url;
+            video3.play();
+      }
 
       if(userId>videoArray.length){
-            video4.src = '';
+            video4.style.display = 'none';
       }else{
             video4.src = videoArray[userId].url;
       }
 
       if(userId+1>videoArray.length){
-            video5.src = '';
+            video5.style.display = 'none';
       }else{
             video5.src = videoArray[userId+1].url;
       }
@@ -109,9 +127,17 @@ function showVideo(userId){
       setInterval(() => {
             // console.log(video3.ended);
             if(video3.ended){
-                  userId = userId +1;
-                  showVideo(userId);
-                  video3.play();
+                  userId++;
+                  // userId = userId +1;
+                  if(userId>videoArray.length){
+                        const viewPage = document.querySelector('.viewPage');
+                        viewPage.style.display = 'none';
+                        const video = document.querySelector('.view3 video')
+                        video.pause();
+                  }else{
+                        showVideo(userId);
+                        video3.play(); 
+                  }
             }
       }, 1000);
 }
@@ -122,12 +148,14 @@ function showVideo(userId){
 const previousBtn = document.querySelector('.previousBtn');
 const nextBtn = document.querySelector('.nextBtn');
 previousBtn.addEventListener('click', function(){
-      userId+=1;
+      // userId = userId - 1;
+      userId--;
       showVideo(userId);
 })
 nextBtn.addEventListener('click', function(){
-userId-=1
-showVideo(userId);
+      // userId = userId + 1;
+      userId++;
+      showVideo(userId);
 })
 
 
@@ -144,11 +172,11 @@ const leftBtn = document.querySelector('.leftBtn');
 const rightBtn = document.querySelector('.rightBtn');
 leftBtn.addEventListener('click', function(){
       const storyContainer = document.querySelector('.storyContainer');
-      storyContainer.scrollBy(-400, 0);
+      storyContainer.scrollBy(-300, 0);
 })
 rightBtn.addEventListener('click', function(){
       const storyContainer = document.querySelector('.storyContainer');
-      storyContainer.scrollBy(400, 0);
+      storyContainer.scrollBy(300, 0);
 })
 
 
