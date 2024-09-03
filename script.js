@@ -87,6 +87,7 @@ function showVideo(userId){
       }
 
       video3.src = videoArray[userId-1].url;
+      video3.play();
 
       if(userId>videoArray.length){
             video4.src = '';
@@ -99,13 +100,22 @@ function showVideo(userId){
       }else{
             video5.src = videoArray[userId+1].url;
       }
-      console.log(video1)
-      console.log(video2)
-      console.log(video3)
-      console.log(video4)
-      console.log(video5)
-
+      // console.log(video1)
+      // console.log(video2)
+      // console.log(video3)
+      // console.log(video4)
+      // console.log(video5)
+      
+      setInterval(() => {
+            // console.log(video3.ended);
+            if(video3.ended){
+                  userId = userId +1;
+                  showVideo(userId);
+                  video3.play();
+            }
+      }, 1000);
 }
+
 
 
 // scroll button for viewPage
@@ -125,6 +135,8 @@ const closeBtn = document.querySelector('.closeBtn');
 closeBtn.addEventListener('click', function(){
       const viewPage = document.querySelector('.viewPage');
       viewPage.style.display = 'none';
+      const video = document.querySelector('.view3 video')
+      video.pause();
 })
 
 // scroll buttons for mainPage
@@ -148,11 +160,11 @@ playPauseBtn.addEventListener('click', function(){
       if(video.paused){
             video.play();
             playPauseBtn.src = "Assets/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-            // console.log(playPauseBtn.src)
+            console.log(playPauseBtn.src)
       }else{
             video.pause();
             playPauseBtn.src = "Assets/pause_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-            // console.log(playPauseBtn.src)
+            console.log(playPauseBtn.src)
       }
 })
 muteBtn.addEventListener('click', function(){
