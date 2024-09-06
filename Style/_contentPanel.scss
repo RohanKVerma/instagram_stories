@@ -1,0 +1,92 @@
+@import 'variable';
+@import 'mixin';
+
+.contentPage {
+      width: 50%;
+      min-height: 90vh;
+      margin-right: 30vw;
+      margin-left: 20vw;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      @include flex-center;
+      align-items: flex-start;
+
+      .leftBtn{
+        right:-30px;
+      }
+      .rightBtn{
+        left: -30px;
+      }
+    
+      .stories {
+        min-width: 100%;
+        @include flex-center;
+        flex-direction: row;
+    
+        .scrollBtn {
+          background-color: $secondary-color;
+          position: relative;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          @include border-radius($border-radius);
+          @include flex-center;
+          cursor: pointer;
+        }
+    
+        .storyContainer {
+          min-width: 100%;
+          // margin-left: 20vw;
+          @include box-shadow($box-shadow);
+          @include flex-center;
+          justify-content: flex-start;
+          flex-direction: row;
+          overflow-x: auto;
+          @include scroll-behavior;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+    
+          .story {
+            padding: 5px;
+            margin: 5px;
+            @include flex-center;
+            flex-direction: column;
+            min-width: 70px;
+            min-height: 70px;
+            cursor: pointer;
+    
+            .userPFP {
+              min-height: 75px;
+              min-width: 75px;
+              @include border-radius($border-radius);
+              background-image: linear-gradient(
+                45deg,
+                $primary-color,
+                #5851db,
+                #833ab4,
+                #c13584,
+                #e1306c,
+                #fd1d1d
+              );
+              @include flex-center;
+    
+              img {
+                height: 63px;
+                width: 63px;
+                @include border-radius($border-radius);
+                border: 3px solid white;
+              }
+            }
+    
+            .userName {
+              margin-top: 2px;
+              font-size: 0.8rem;
+            }
+    
+            .seen {
+              background-image: none;
+              background-color: grey;
+            }
+          }
+        }
+      }
+    }

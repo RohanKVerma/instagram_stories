@@ -1,0 +1,19 @@
+@import 'variable';
+
+@mixin flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    @mixin border-radius($radius) {
+      border-radius: $radius;
+    }
+    
+    @mixin box-shadow($shadow) {
+      box-shadow: $shadow;
+    }
+    
+    @mixin scroll-behavior {
+      scroll-behavior: smooth;
+    }
