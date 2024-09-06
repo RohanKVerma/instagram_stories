@@ -75,14 +75,14 @@ function showVideo(userId) {
   stories.forEach((element) => {
     if (element.id == userId) {
       element.children[0].classList.add("seen");
-      console.log(element);
+      // console.log(element);
     } else {
     }
   });
   if (userId - 3 < 0) {
     video1.style.display = "none";
   } else {
-    console.log(videoArray[userId - 3].url);
+    // console.log(videoArray[userId - 3].url);
     video1.src = videoArray[userId - 3].url;
   }
 
@@ -126,7 +126,7 @@ function showVideo(userId) {
         video3.play();
       }
     }
-  }, 0);
+  }, 1000);
 }
 
 // scroll button for viewPage
@@ -168,28 +168,33 @@ playPauseBtn.addEventListener("click", function () {
   const video = document.querySelector(".view3 video");
   if (video.paused) {
     video.play();
-    playPauseBtn.src =
-      "Assets/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-    console.log(playPauseBtn.src);
-  } else {
-    video.pause();
-    playPauseBtn.src =
-      "Assets/pause_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-    console.log(playPauseBtn.src);
+    playPauseBtn.innerHTML=
+    `<img
+        src="./../Assets/pause_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="Pause/Play"/>`;
+            // playPauseBtn.setAttribute('src', "Assets/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
+    } else {
+      video.pause();
+      playPauseBtn.innerHTML=
+      `<img
+          src="./../Assets/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+          alt="Pause/Play"/>`;
+    playPauseBtn.setAttribute('src', "Assets/pause_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg");
   }
 });
 muteBtn.addEventListener("click", function () {
   const video = document.querySelector(".view3 video");
   if (video.muted) {
     video.muted = false;
+    muteBtn.innerHTML=
+    `<img
+        src="./../Assets/volume_up_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="Mute/Unmute"/>`;
   } else {
     video.muted = true;
+    muteBtn.innerHTML=
+    `<img
+        src="./../Assets/volume_off_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+        alt="Mute/Unmute"/>`;
   }
 });
-
-const viewPage = document.querySelector('.viewPage');
-viewPage.addEventListener('click', function(){
-  viewPage.style.display = "none";
-  const video = document.querySelector(".view3 video");
-  video.pause();
-})
