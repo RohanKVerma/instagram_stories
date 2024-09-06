@@ -1,0 +1,253 @@
+.contentPage {
+  width: 50%;
+  min-height: 90vh;
+  margin-right: 30vw;
+  margin-left: 20vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+.contentPage .leftBtn {
+  right: -30px;
+}
+.contentPage .rightBtn {
+  left: -30px;
+}
+.contentPage .stories {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.contentPage .stories .scrollBtn {
+  background-color: whitesmoke;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.contentPage .stories .storyContainer {
+  min-width: 100%;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.contentPage .stories .storyContainer::-webkit-scrollbar {
+  display: none;
+}
+.contentPage .stories .storyContainer .story {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 70px;
+  min-height: 70px;
+  cursor: pointer;
+}
+.contentPage .stories .storyContainer .story .userPFP {
+  min-height: 75px;
+  min-width: 75px;
+  border-radius: 50%;
+  background-image: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contentPage .stories .storyContainer .story .userPFP img {
+  height: 63px;
+  width: 63px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+.contentPage .stories .storyContainer .story .userName {
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+.contentPage .stories .storyContainer .story .seen {
+  background-image: none;
+  background-color: grey;
+}
+
+.leftPanel {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.leftPanel .instaLogo {
+  align-self: flex-start;
+  width: 100%;
+  height: auto;
+}
+.leftPanel .instaLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.rightPanel {
+  z-index: -1;
+  background-color: white;
+  position: fixed;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.rightPanel .myDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem;
+}
+.rightPanel .myDetails .myPFP {
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.rightPanel .myDetails .myPFP img {
+  width: 100%;
+  height: 100%;
+}
+.rightPanel .myDetails .myID {
+  font-weight: 600;
+}
+.rightPanel .myDetails .switchProfileBtn a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #405de6;
+}
+
+/* View page styling */
+.viewPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.viewPage .show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 1px solid whitesmoke;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0.5;
+}
+.viewPage .view1 {
+  height: 40%;
+  width: 10%;
+}
+.viewPage .view2 {
+  height: 55%;
+  width: 15%;
+}
+.viewPage .view3 {
+  height: 90%;
+  width: 22%;
+  opacity: 1;
+}
+.viewPage .view3 .videoControls {
+  width: 22%;
+  padding: 0.3rem;
+  margin-right: 1rem;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  top: 8%;
+  z-index: 9;
+}
+.viewPage .view3 .replySection {
+  position: absolute;
+  width: 18%;
+  height: 7%;
+  border: 1px solid whitesmoke;
+  border-radius: 9999px;
+  bottom: 10%;
+}
+.viewPage .view3 .replySection input {
+  height: 100%;
+  width: 100%;
+  padding: 0.3rem;
+  border-radius: 9999px;
+  border: 0 !important;
+  outline: 0 !important;
+  background-color: transparent;
+  color: black;
+}
+.viewPage .view3 .replySection input:focus {
+  background-color: whitesmoke;
+}
+.viewPage .view4 {
+  height: 55%;
+  width: 15%;
+}
+.viewPage .view5 {
+  height: 40%;
+  width: 10%;
+}
+.viewPage .closeBtn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 1rem;
+  width: 1rem;
+  top: 3rem;
+  right: 3rem;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+.viewPage .Btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.content video {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=style.css.map */

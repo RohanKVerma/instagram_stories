@@ -1,0 +1,17 @@
+@import 'variable';
+@import 'mixin';
+
+* {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: $secondary-color;
+        overflow-x: hidden;
+      }
+      .mainPage {
+        position: relative;
+        @include full-screen;
+      }
